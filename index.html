@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Examination System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/inter/3.19.3/inter.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="styles/global.css" rel="stylesheet">
+    <link href="styles/welcome.css" rel="stylesheet">
+    <link href="styles/exam.css" rel="stylesheet">
+    <link href="styles/results.css" rel="stylesheet">
+</head>
+<body>
+    <h1 class="exam-title">Online Examination System</h1>
+    
+    <!-- Welcome modal -->
+    <div class="welcome-modal" id="welcomeModal">
+        <div class="modal-content">
+            <h2 class="modal-title">Welcome to the Exam</h2>
+            <p>Please enter your name to begin the exam</p>
+            
+            <div class="welcome-form">
+                <div class="form-group">
+                    <label for="studentName">Your Full Name:</label>
+                    <input type="text" id="studentName" placeholder="Enter your full name" required>
+                </div>
+            </div>
+            
+            <div class="instructions">
+                <h3>Exam Instructions</h3>
+                <ul>
+                    <li>You have <strong>60 seconds</strong> to complete this examination.</li>
+                    <li>Read each question carefully before selecting your answer.</li>
+                    <li>You must select an answer before proceeding to the next question.</li>
+                    <li>You can finish the exam at any time by clicking the "Finish Exam" button.</li>
+                    <li>If time runs out, your exam will be automatically submitted.</li>
+                    <li>Your final score will be displayed immediately after completion.</li>
+                </ul>
+            </div>
+            
+            <button class="btn btn-primary" id="startExamBtn">
+                <i class="fas fa-play"></i>
+                Start Exam
+            </button>
+        </div>
+    </div>
+    
+    <!-- Main exam content -->
+    <div class="main-block exam-content" id="examContent">
+        <div class="exam-info">
+            <div class="info-item">
+                <i class="fas fa-book"></i>
+                <span id="exam-name">General Knowledge Exam</span>
+            </div>
+            <div class="info-item">
+                <i class="fas fa-user"></i>
+                <span id="student-name-display"></span>
+            </div>
+            <div class="info-item">
+                <i class="fas fa-question-circle"></i>
+                <span id="total-questions"></span>
+            </div>
+        </div>
+
+        <div class="timer-container">
+            <div class="timer-bar">
+                <div class="timer-progress"></div>
+            </div>
+            <div class="timer-display">
+                <i class="fas fa-clock"></i>
+                <span id="timer-text">00:00</span>
+            </div>
+        </div>
+        
+        <div class="question-container">
+            <div class="question-navigation">
+                <div class="question-counter">Question <span id="current-question-num">1</span> of <span id="total-questions-num">0</span></div>
+            </div>
+            <div class="question-content">
+                <div class="question-image-section">
+                    <img src="" class="question-image" id="question-image">
+                </div>
+                <br><br>
+                <div class="question-text-section">
+                    <h2 class="question-text" id="question-text"></h2>
+                    <div class="options-container" id="options-container"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="buttons-container" id="buttonsContainer">
+            <button class="btn btn-secondary" id="finishBtn">
+                <i class="fas fa-check-circle"></i>
+                Finish Exam
+            </button>
+            <button class="btn btn-primary disabled" id="nextBtn">
+                Next Question
+                <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+    </div>
+        
+    <script type="module" src="./scripts/main.js"></script>
+</body>
+</html>
