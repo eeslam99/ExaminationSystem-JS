@@ -55,7 +55,7 @@ function displayQuestion() {
   const question = exam.getCurrentQuestion();
 
   elements.currentQuestion.textContent = exam.currentIndex + 1;
-  elements.totalQuestions.textContent = exam.questions.length;
+  // elements.totalQuestions.textContent = exam.questions.length;
   elements.questionText.textContent = question.title;
 
   if (question.imageUrl) {
@@ -101,6 +101,7 @@ function displayQuestion() {
 function selectAnswer(index) {
   exam.getCurrentQuestion().userAnswer = index;
   elements.nextBtn.classList.remove("disabled");
+  console.log(exam.getCurrentQuestion());
   displayQuestion();
 }
 
