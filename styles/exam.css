@@ -183,6 +183,7 @@
 .btn-primary {
     background: linear-gradient(135deg, #2b5876, #4e4376);
     color: white;
+    justify-content: center;
 }
 
 .btn-secondary {

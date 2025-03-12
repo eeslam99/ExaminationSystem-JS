@@ -1,39 +1,38 @@
 .results-container {
     max-width: 800px;
-    margin: 0 auto;
+    margin: 40px auto;
+    display: none;
+}
+
+.results-content {
     padding: 40px;
     background: white;
     border-radius: 20px;
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
 }
 
-.results-title {
+.modal-title {
     text-align: center;
     margin-bottom: 30px;
     color: #2b5876;
-    font-family: "Pacifico", serif;
 }
 
-.results-student-name {
+.student-info {
     font-size: 24px;
     text-align: center;
     margin-bottom: 10px;
 }
 
-.results-percentage {
+.score-circle-container {
     display: flex;
     justify-content: center;
     margin: 30px 0;
 }
 
-.results-percentage-circle {
+.score-circle {
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    background: conic-gradient(
-        var(--percentage-color) var(--percentage-deg),
-        #f0f0f0 var(--percentage-deg) 360deg
-    );
     display: flex;
     justify-content: center;
     align-items: center;
@@ -41,7 +40,7 @@
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-.results-percentage-inner {
+.score-inner {
     position: absolute;
     width: 130px;
     height: 130px;
@@ -52,17 +51,21 @@
     align-items: center;
     font-size: 36px;
     font-weight: bold;
-    color: var(--percentage-color);
     font-family: "Pacifico", serif;
 }
 
-.results-score {
+.score-details {
     font-size: 20px;
     text-align: center;
     margin-bottom: 20px;
 }
 
-.results-retry-btn {
+.result-actions {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.btn.retry-btn {
     padding: 12px 24px;
     background: linear-gradient(135deg, #2b5876, #4e4376);
     color: white;
@@ -70,6 +73,6 @@
     border-radius: 8px;
     cursor: pointer;
     font-weight: 500;
-    font-family: "Pacifico", serif;
-    margin-top: 30px;
+    margin:auto;
 }
+

@@ -7,7 +7,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/inter/3.19.3/inter.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="styles/global.css" rel="stylesheet">
     <link href="styles/welcome.css" rel="stylesheet">
@@ -16,20 +15,20 @@
 </head>
 <body>
     <h1 class="exam-title">Online Examination System</h1>
-    
-    <!-- Welcome modal -->
+
+    <!-- Welcome Content -->
     <div class="welcome-modal" id="welcomeModal">
         <div class="modal-content">
             <h2 class="modal-title">Welcome to the Exam</h2>
             <p>Please enter your name to begin the exam</p>
-            
+
             <div class="welcome-form">
                 <div class="form-group">
                     <label for="studentName">Your Full Name:</label>
                     <input type="text" id="studentName" placeholder="Enter your full name" required>
                 </div>
             </div>
-            
+
             <div class="instructions">
                 <h3>Exam Instructions</h3>
                 <ul>
@@ -41,24 +40,20 @@
                     <li>Your final score will be displayed immediately after completion.</li>
                 </ul>
             </div>
-            
+
             <button class="btn btn-primary" id="startExamBtn">
                 <i class="fas fa-play"></i>
                 Start Exam
             </button>
         </div>
     </div>
-    
-    <!-- Main exam content -->
+
+    <!-- Exam Content -->
     <div class="main-block exam-content" id="examContent">
         <div class="exam-info">
             <div class="info-item">
                 <i class="fas fa-book"></i>
-                <span id="exam-name">General Knowledge Exam</span>
-            </div>
-            <div class="info-item">
-                <i class="fas fa-user"></i>
-                <span id="student-name-display"></span>
+                <span id="exam-name">Exam Name</span>
             </div>
             <div class="info-item">
                 <i class="fas fa-question-circle"></i>
@@ -66,6 +61,7 @@
             </div>
         </div>
 
+        <!-- Timer -->
         <div class="timer-container">
             <div class="timer-bar">
                 <div class="timer-progress"></div>
@@ -75,10 +71,12 @@
                 <span id="timer-text">00:00</span>
             </div>
         </div>
-        
+
+        <!-- Question Container -->
         <div class="question-container">
             <div class="question-navigation">
-                <div class="question-counter">Question <span id="current-question-num">1</span> of <span id="total-questions-num">0</span></div>
+                <div class="question-counter">Question <span id="current-question-num">1</span> of <span
+                        id="total-questions-num">0</span></div>
             </div>
             <div class="question-content">
                 <div class="question-image-section">
@@ -92,6 +90,7 @@
             </div>
         </div>
 
+        <!-- buttons next and Finish  -->
         <div class="buttons-container" id="buttonsContainer">
             <button class="btn btn-secondary" id="finishBtn">
                 <i class="fas fa-check-circle"></i>
@@ -103,7 +102,32 @@
             </button>
         </div>
     </div>
-        
+
+    <!-- Result Content -->
+    <div class="results-container" id="resultsContainer" style="display: none;">
+        <div class="main-block results-content">
+            <h1 class="modal-title">Exam Result</h1>
+
+            <div class="score-circle-container">
+                <div class="score-circle">
+                    <div class="score-inner">
+                        <span id="score-percentage">0%</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="score-details">
+                You have <strong id="score-correct">0</strong> out of <strong id="score-total">0</strong> Correct answers
+            </div>
+
+            <div class="result-actions">
+                <button class="btn retry-btn" id="retryExamBtn">
+                    <i class="fas fa-redo"></i> Retry Exam
+                </button>
+            </div>
+        </div>
+    </div>
+
     <script type="module" src="./scripts/main.js"></script>
 </body>
 </html>

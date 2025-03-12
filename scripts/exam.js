@@ -1,16 +1,15 @@
 export class Exam {
     constructor(title, questions, timeLimit) {
         this.title = title;
-        this.questions = this.shuffleQuestions(questions);
+        this.questions = this.randomQuestions(questions);
         this.currentIndex = 0;
         this.timeLimit = timeLimit;
         this.timeRemaining = timeLimit;
         this.timer = null;
-        this.studentName = '';
     }
 
-    shuffleQuestions(questions) {
-        return [...questions].sort(() => Math.random() - 0.5);
+    randomQuestions(questions) {
+        return questions.sort(() => Math.random() - 0.5);
     }
 
     getCurrentQuestion() {
@@ -38,16 +37,9 @@ export class Exam {
         const percentage = (correctAnswers / this.questions.length) * 100;
 
         return {
-            studentName: this.studentName,
             score: correctAnswers,
             total: this.questions.length,
-            percentage: percentage,
-            answers: this.questions.map(q => ({
-                question: q.title,
-                userAnswer: q.userAnswer !== null ? q.options[q.userAnswer] : 'Not answered',
-                correctAnswer: q.options[q.correctAnswer],
-                isCorrect: q.isCorrect()
-            }))
+            percentage: percentage
         };
     }
 
